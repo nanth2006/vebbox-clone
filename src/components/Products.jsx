@@ -35,20 +35,20 @@ function Products() {
             </p>
 
             {/* Product cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2  gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {productList.map((product, index) => (
                     <div
                         key={index}
-                        className="relative rounded-lg overflow-hidden shadow-md "
+                        className="relative rounded-lg overflow-hidden shadow-md group"
                     >
                         <img
                             src={product.image}
                             alt={product.title}
-                            className="w-full h-80 "
+                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[90%] h-40 bg-white/90 backdrop-blur-sm rounded-md px-6 py-5 text-center shadow-lg hover:bg-blue-500 hover:text-white hover:text-white">
-                            <h1 className="text-2xl font-bold mb-2">{product.title}</h1>
-                            <p className="text-2xs pr-3 pl-3 pb-3 text-gray-600 hover:text-white">{product.content}</p>
+                        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[90%] bg-white/95 backdrop-blur-xs rounded-md px-6 py-5 text-center shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300 group/card">
+                            <h3 className="text-2xl font-bold mb-2 group-hover/card:text-white">{product.title}</h3>
+                            <p className="text-sm px-2 pb-1 text-gray-600 group-hover/card:text-white">{product.content}</p>
                         </div>
                     </div>
                 ))}
@@ -56,4 +56,5 @@ function Products() {
         </div>
     );
 }
+
 export default Products;

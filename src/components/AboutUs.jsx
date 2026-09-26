@@ -35,86 +35,68 @@ const stats = [
 function AboutUs() {
     return (
         <div className="max-w-6xl mx-auto px-8 py-10">
-
             {/* Header */}
             <div className="flex items-center justify-center gap-4 mb-10">
                 <span className="h-0.5 w-16 bg-blue-500"></span>
-
-                <h2 className="text-4xl font-bold tracking-wide">
-                    ABOUT US
-                </h2>
-
+                <h2 className="text-4xl font-bold tracking-wide">ABOUT US</h2>
                 <span className="h-0.5 w-16 bg-blue-500"></span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 text-2xs">
-
-                <p className="px-6  pb-6 text-gray-600">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 text-base">
+                <p className="px-4 pb-6 text-gray-600 leading-relaxed">
                     We are consummate custom software Development company delivering splendid business IT Solutions and related services to customers across the globe. Our development services are led by our dedicated and passionate team to provide best industry practices combined with technology expertise and business domain knowledge to drive digital transformation.
                 </p>
 
-                <p className="px-4 pb-6 text-gray-600">
+                <p className="px-4 pb-6 text-gray-600 leading-relaxed">
                     Our skilled team combines technical excellence with deep business domain knowledge, ensuring every solution we deliver is scalable, secure, and tailored to help our clients grow and stay ahead in a rapidly evolving digital landscape.
                 </p>
-
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
                 {/* Left Image */}
-                <div className="w-full">
+                <div className="w-full flex justify-center">
                     <img
                         src="https://www.vebbox.com/assets/img/counts-img.svg"
                         alt="about illustration"
-                        className="w-120 max-w-6xl mx-auto "
+                        className="w-full max-w-lg mx-auto"
                     />
                 </div>
 
                 {/* Right Stats */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10">
-
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                     {stats.map((stat, index) => {
-
                         const Icon = stat.icon;
 
                         return (
                             <div
                                 key={index}
-                                className="flex gap-4"
+                                className="flex gap-4 items-start"
                             >
-
                                 {/* Blue Icon */}
-                                <div className="flex-shrink-0">
+                                <div className="shrink-0">
                                     <Icon
-                                        size={42}
+                                        size={40}
                                         strokeWidth={2}
                                         className="text-blue-500"
                                     />
                                 </div>
 
-                                <div className="w-150">
-
-                                    <h1 className="text-3xl font-extrabold mb-2">
+                                <div>
+                                    <h3 className="text-3xl font-extrabold mb-1">
                                         {stat.number}
-                                    </h1>
-
-                                    <p className="text-gray-600 w-60">
-                                        <span className="font-bold text-black">
+                                    </h3>
+                                    <p className="text-gray-600 text-sm">
+                                        <span className="font-bold text-black block mb-0.5">
                                             {stat.label}
-                                        </span>{" "}
+                                        </span>
                                         {stat.desc}
                                     </p>
-
                                 </div>
-
                             </div>
                         );
                     })}
-
                 </div>
-
             </div>
-
         </div>
     );
 }

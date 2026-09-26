@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function ScrollToTopButton() {
+function ScrollToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,8 @@ function ScrollToTopButton() {
     visible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 p-3 w-10 h-10 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition text-3xl"
+        aria-label="Scroll to top"
+        className="fixed bottom-6 right-6 p-3 w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-all text-2xl flex items-center justify-center cursor-pointer z-50"
       >
         ↑
       </button>
@@ -28,4 +29,4 @@ function ScrollToTopButton() {
   );
 }
 
-export default ScrollToTopButton;
+export default ScrollToTop;
